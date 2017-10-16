@@ -9,6 +9,41 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>GoogleAds.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>OneSignalNotificationServiceExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>OneSignalServiceExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>FA6E38491F9491DE00E9D76C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA93D5B01F9B65A20023AB03</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAAF17CB1F9A56B00032FA1B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

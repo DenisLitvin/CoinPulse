@@ -1,0 +1,60 @@
+PODS:
+  - AppsFlyerFramework (4.8.1)
+  - Charts (3.0.4):
+    - Charts/Core (= 3.0.4)
+  - Charts/Core (3.0.4)
+  - Firebase/Core (4.6.0):
+    - FirebaseAnalytics (= 4.0.5)
+    - FirebaseCore (= 4.0.11)
+  - Firebase/Database (4.6.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.1.1)
+  - FirebaseAnalytics (4.0.5):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.11):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (4.1.1):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - leveldb-library (~> 1.18)
+  - FirebaseInstanceID (2.0.6)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - Kanna (2.1.1)
+  - leveldb-library (1.20)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - OneSignal (2.5.6)
+
+DEPENDENCIES:
+  - AppsFlyerFramework
+  - Charts
+  - Firebase/Core
+  - Firebase/Database
+  - Kanna (~> 2.1.0)
+  - OneSignal (< 3.0, >= 2.5.2)
+
+SPEC CHECKSUMS:
+  AppsFlyerFramework: 4f6fe2b018e1c2ca4f390652f3548a8ee799a610
+  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
+  Firebase: 27321a925aa85520618255a7c630859e0502ccbd
+  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
+  FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
+  FirebaseDatabase: 2e6e8e110b93b9a6e7aac71774c769a363035cb1
+  FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
+  leveldb-library: 44ef425bfde64f5b41daef86b38db2d13edbbee1
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  OneSignal: 9ec286d9156b86b3975f45d928e70f46c74ef4b7
+
+PODFILE CHECKSUM: 7bc660f78f5a0e58f10239109b3acdb23ec2a49e
+
+COCOAPODS: 1.3.1

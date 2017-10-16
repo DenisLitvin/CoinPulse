@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import OneSignal
+import GoogleMobileAds
+import AppsFlyerLib
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        let mainVC = MainVC()
+        mainVC.title = "COIN Pulse"
+        let navCon = UINavigationController(rootViewController: mainVC)
+        navCon.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "background"), for: .default)
+        navCon.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        navCon.navigationBar.tintColor = .white
+        
+        window?.rootViewController = navCon
+        
+        
         return true
     }
 
@@ -34,13 +51,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        //MARK: - Apps Flyer
+        AppsFlyerTracker.shared().trackAppLaunch()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    // Reports app open from a Universal Link for iOS 9 or later
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        AppsFlyerTracker.shared().continue(userActivity, restorationHandler: restorationHandler)
+        return true
+    }
+    
+    // Reports app open from deeplink from apps which do not support Universal Links (Twitter) and for iOS8 and below
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        AppsFlyerTracker.shared().handleOpen(url, sourceApplication: sourceApplication, withAnnotation: annotation)
+        return true
+    }
+    
+    // Reports app open from deeplink for iOS 10 or later
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        AppsFlyerTracker.shared().handleOpen(url, options: options)
+        return true
+    }
+    
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        AppsFlyerTracker.shared().registerUninstall(deviceToken)
+    }
+    private func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        AppsFlyerTracker.shared().handlePushNotification(userInfo)
+    }
 }
 
